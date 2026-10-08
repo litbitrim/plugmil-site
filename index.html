@@ -1,7 +1,802 @@
 <!doctype html>
-<html>
-<head><meta charset="utf-8"><title>plugmil</title></head>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>plugmil · Websites &amp; technische Betreuung in Wildau und Schönefeld</title>
+<meta name="description" content="Jamil Dentel entwickelt Websites, betreut Hosting und löst technische Aufgaben für kleine Unternehmen in Wildau, Schönefeld und remote. Projekt unverbindlich anfragen.">
+<link rel="canonical" href="https://plugmil.dev/">
+<meta name="theme-color" content="#050807">
+<meta property="og:type" content="website"><meta property="og:locale" content="de_DE"><meta property="og:title" content="plugmil · Websites &amp; technische Betreuung"><meta property="og:description" content="Websites, Hosting und kleine Automationen für Ihren Arbeitsalltag. Ein direkter Ansprechpartner: Jamil Dentel."><meta property="og:url" content="https://plugmil.dev/">
+<style>
+:focus-visible{outline:2px solid #72f5bd;outline-offset:4px}
+.skip{position:absolute;left:16px;top:-80px;background:#72f5bd;color:#04120b;padding:10px;z-index:100}.skip:focus{top:8px}
+form label{font-size:13px;color:var(--tx)}
+.form-note{font-size:12px;color:var(--mu)}
+.form-note a{text-decoration:underline;text-underline-offset:3px}
+.consent{display:flex;gap:9px;align-items:flex-start}.consent input{margin-top:5px}
+.hp{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.form-status{font-size:13px;padding:12px;border:1px solid var(--ln);border-radius:8px}
+.form-status[data-state=error]{color:#ffb8ad;border-color:#994f42}
+.form-status[data-state=accepted]{color:var(--g)}
+button:disabled{opacity:.6;cursor:wait;transform:none!important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+:root{--bg:#050807;--p:#0a110e;--p2:#0e1813;--ln:#15241d;--g:#72f5bd;--gd:#2a8a65;--tx:#e8f0eb;--mu:#86968d;--m:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--s:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg)!important;color:var(--tx)!important;font-family:var(--s);font-size:15px;line-height:1.65;padding:0!important;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(900px 500px at 75% -10%,rgba(114,245,189,.09),transparent 60%),radial-gradient(700px 400px at -10% 40%,rgba(114,245,189,.04),transparent 60%);pointer-events:none;z-index:0}
+.w{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--m)}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(5,8,7,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:58px}
+.logo{font-family:var(--m);font-weight:800;letter-spacing:.28em;font-size:14px}.logo b{color:var(--g)}
+.nl{display:flex;gap:26px;align-items:center;font-family:var(--m);font-size:12px;color:var(--mu)}.nl a:hover{color:var(--g)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--m);font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:13px 22px;border-radius:10px;background:var(--g);color:#04120b;border:1px solid var(--g);transition:.25s;cursor:pointer}
+.btn:hover{box-shadow:0 0 34px -4px var(--g);transform:translateY(-2px)}
+.btn.o{background:transparent;color:var(--tx);border-color:var(--ln)}.btn.o:hover{border-color:var(--g);color:var(--g);box-shadow:none}
+.nl .btn{padding:9px 16px}
+.eyebrow{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--g)}
+h1,h2,h3,h4{font-family:var(--m);letter-spacing:-.01em}
+h2{font-size:clamp(22px,3.2vw,32px);text-transform:uppercase;letter-spacing:.03em;font-weight:800;margin:10px 0 14px}
+.lead{color:var(--mu);max-width:560px}
+section{padding:84px 0;border-top:1px solid var(--ln)}
+.rv{opacity:0;transform:translateY(18px);transition:.8s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1;transform:none}
+/* hero */
+.hero{padding:70px 0 80px;border:0}
+.hero .g{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.pill{display:inline-flex;gap:9px;align-items:center;font-family:var(--m);font-size:11.5px;border:1px solid var(--ln);background:var(--p);padding:7px 14px;border-radius:99px;color:var(--mu)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g);animation:pl 2s infinite}@keyframes pl{50%{opacity:.3}}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin:22px 0 20px}
+h1 em{font-style:normal;color:var(--g)}
+.hero p.lead{font-size:16.5px;margin-bottom:30px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;font-family:var(--m);font-size:11.5px;color:var(--mu)}.trust span:before{content:"✓ ";color:var(--g)}
+/* browser */
+.br{background:var(--p);border:1px solid var(--ln);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.9),0 0 60px -30px var(--g)}
+.br .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--ln);background:var(--p2)}
+.br .bar i{width:9px;height:9px;border-radius:50%;background:#22332b}
+.br .url{margin-left:10px;flex:1;background:var(--bg);border:1px solid var(--ln);border-radius:6px;font-family:var(--m);font-size:11px;color:var(--mu);padding:4px 10px}
+.scr{padding:20px;min-height:280px;transition:.5s}
+.scr .nv{display:flex;justify-content:space-between;align-items:center;font-family:var(--m);font-size:11px;margin-bottom:22px}
+.scr .nv b{letter-spacing:.14em;color:var(--ac,var(--g))}
+.scr .nv span{opacity:.6}
+.scr h4{font-size:19px;line-height:1.25;margin-bottom:8px;color:var(--fg,var(--tx))}
+.scr p{font-size:12.5px;opacity:.7;max-width:280px;margin-bottom:14px;color:var(--fg,var(--tx))}
+.scr .bt{display:inline-block;background:var(--ac,var(--g));color:#04120b;font-family:var(--m);font-size:11px;font-weight:700;padding:8px 14px;border-radius:7px}
+.scr .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.scr .tiles div{height:52px;border-radius:8px;background:color-mix(in srgb,var(--ac,var(--g)) 14%,transparent);border:1px solid color-mix(in srgb,var(--ac,var(--g)) 30%,transparent)}
+.sc{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--ln);background:var(--p2)}
+.sc div{flex:1;text-align:center}.sc b{display:block;font-family:var(--m);font-size:20px;color:var(--g)}.sc small{font-family:var(--m);font-size:9.5px;color:var(--mu);letter-spacing:.1em;text-transform:uppercase}
+/* strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ln);border-radius:14px;background:var(--p);overflow:hidden}
+.strip div{padding:24px 22px;border-right:1px solid var(--ln)}.strip div:last-child{border:0}
+.strip b{font-family:var(--m);font-size:20px;overflow-wrap:anywhere;color:var(--g);display:block}.strip span{font-size:13px;color:var(--mu)}
+/* branchen */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 22px}
+.tabs button{font-family:var(--m);font-size:12px;background:var(--p);border:1px solid var(--ln);color:var(--mu);padding:10px 18px;border-radius:99px;cursor:pointer;transition:.2s}
+.tabs button.on,.tabs button:hover{border-color:var(--g);color:var(--g)}
+.bg2{display:grid;grid-template-columns:1fr 1.1fr;gap:34px;align-items:center}
+.bl li{list-style:none;padding:9px 0;border-bottom:1px solid var(--ln);color:#b9c6be;font-size:14.5px}.bl li:before{content:"› ";color:var(--g);font-family:var(--m)}
+.bl h3{font-size:20px;margin-bottom:6px}.bl .q{color:var(--mu);margin-bottom:14px}
+/* five */
+.five{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--ln);border-radius:14px;overflow:hidden;margin-top:36px}
+.five div{padding:24px 20px;border-right:1px solid var(--ln);background:var(--p);transition:.3s}.five div:last-child{border:0}.five div:hover{background:var(--p2)}
+.five i{font-style:normal;font-family:var(--m);font-size:11px;color:var(--gd)}.five h4{font-size:13.5px;margin:8px 0}.five p{font-size:13px;color:var(--mu);line-height:1.55}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;position:relative}
+.st{background:var(--p);border:1px solid var(--ln);border-radius:14px;padding:24px;position:relative;transition:.3s}.st:hover{border-color:var(--gd);transform:translateY(-4px)}
+.st .n{font-family:var(--m);font-size:34px;font-weight:800;color:var(--ln);transition:.3s}.st:hover .n{color:var(--g)}
+.st h4{font-size:15px;margin:10px 0 6px}.st p{font-size:13.5px;color:var(--mu)}.st .t{margin-top:14px;font-family:var(--m);font-size:10.5px;color:var(--g);letter-spacing:.08em;text-transform:uppercase}
+/* pricing */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.card{background:var(--p);border:1px solid var(--ln);border-radius:16px;overflow:hidden;position:relative;transition:.3s}
+.card:hover{border-color:var(--gd);box-shadow:0 0 50px -20px var(--g);transform:translateY(-4px)}
+.card.hl{border-color:var(--gd);background:linear-gradient(180deg,rgba(114,245,189,.07),var(--p) 50%)}
+.card .h{padding:15px 22px;border-bottom:1px solid var(--ln);font-family:var(--m);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--g);display:flex;justify-content:space-between}
+.card .b{padding:24px 22px}
+.big{font-family:var(--m);font-size:26px;font-weight:700;color:var(--g);line-height:1.15}.big small{font-size:12px;color:var(--mu);font-weight:400}
+.tag{display:inline-block;margin:12px 0 4px;font-family:var(--m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#04120b;background:var(--g);padding:4px 10px;border-radius:99px;font-weight:700}
+.card ul{list-style:none;margin-top:16px}.card li{padding:5px 0;color:#bccac2;font-size:14px}.card li:before{content:"› ";color:var(--g);font-family:var(--m)}
+.card .btn{margin-top:18px;width:100%;justify-content:center}
+/* calc */
+.calc{margin-top:28px;background:var(--p);border:1px solid var(--ln);border-radius:16px;display:grid;grid-template-columns:1fr 1fr}
+.calc>div{padding:30px}.calc>div:first-child{border-right:1px solid var(--ln)}
+.calc h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.calc .sb{color:var(--mu);font-size:13px;margin-bottom:22px}
+.sl{display:flex;justify-content:space-between;font-family:var(--m);font-size:12.5px;margin-bottom:8px}.sl b{color:var(--g)}
+input[type=range]{width:100%;accent-color:#72f5bd;margin-bottom:22px}
+.ck{display:flex;flex-wrap:wrap;gap:8px}
+.ck label{font-family:var(--m);font-size:12px;border:1px solid var(--ln);padding:8px 14px;border-radius:99px;cursor:pointer;color:var(--mu);transition:.2s;user-select:none}
+.ck input{margin-right:6px;accent-color:var(--g)}.ck label.on{border-color:var(--g);color:var(--g);background:rgba(114,245,189,.07)}
+.res .row{margin-bottom:20px}
+.res .lb{font-family:var(--m);font-size:11px;color:var(--mu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;display:flex;justify-content:space-between}
+.res .tr{height:12px;background:var(--ln);border-radius:9px;overflow:hidden}.res .tr b{display:block;height:100%;border-radius:9px;transition:width .8s cubic-bezier(.16,1,.3,1)}
+.res .mk b{background:#44544c}.res .us b{background:var(--g);box-shadow:0 0 16px var(--g)}
+.res .v{font-family:var(--m);font-size:22px;margin-top:8px}.res .us .v{color:var(--g)}
+.res .fine{font-size:11.5px;color:#56655d;margin-top:8px}
+.sav{margin-top:6px;padding:14px 16px;border:1px dashed var(--gd);border-radius:10px;font-size:13.5px;color:#bccac2}
+/* compare */
+.tb{margin-top:34px;border:1px solid var(--ln);border-radius:16px;overflow:hidden;background:var(--p)}
+.tb .r{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;border-bottom:1px solid var(--ln)}.tb .r:last-child{border:0}
+.tb .r>div{padding:15px 18px;font-size:13.5px;color:var(--mu);border-right:1px solid var(--ln)}.tb .r>div:last-child{border:0}
+.tb .r>div:first-child{color:var(--tx)}
+.tb .hd>div{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--p2)}
+.tb .r>div:nth-child(4){background:rgba(114,245,189,.05);color:var(--g)}
+/* faq */
+.fq{margin-top:30px;border-top:1px solid var(--ln)}
+.fq div{border-bottom:1px solid var(--ln)}
+.fq button{width:100%;text-align:left;background:none;border:0;color:var(--tx);font-family:var(--m);font-size:14px;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;gap:20px}
+.fq button:after{content:"+";color:var(--g);font-size:18px;transition:.3s}.fq .o button:after{transform:rotate(45deg)}
+.fq p{max-height:0;overflow:hidden;color:var(--mu);transition:.4s;font-size:14.5px}.fq .o p{max-height:200px;padding-bottom:20px}
+/* live */
+.lg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.lc{background:var(--p);border:1px solid var(--ln);border-radius:14px;padding:22px;transition:.3s;display:block}.lc:hover{border-color:var(--g);transform:translateY(-4px)}
+.lc .k{font-family:var(--m);font-size:10.5px;color:var(--gd);letter-spacing:.14em;text-transform:uppercase}.lc h4{font-size:17px;margin:8px 0}.lc p{font-size:13.5px;color:var(--mu)}.lc .l{font-family:var(--m);font-size:12px;color:var(--g);margin-top:14px}
+/* contact */
+.ct{background:linear-gradient(135deg,rgba(114,245,189,.1),var(--p) 55%);border:1px solid var(--gd);border-radius:20px;padding:46px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ct h2{margin-top:6px}
+form{display:grid;gap:12px}
+input[type=text],input[type=email],select,textarea{width:100%;background:var(--bg);border:1px solid var(--ln);color:var(--tx);font-family:var(--s);font-size:14px;padding:13px 15px;border-radius:10px;outline:0;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--g)}textarea{min-height:90px;resize:vertical}
+.ok{display:none;font-family:var(--m);font-size:12.5px;color:var(--g)}
+footer{border-top:1px solid var(--ln);padding:34px 0;font-family:var(--m);font-size:11.5px;color:#56655d}footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a:hover{color:var(--g)}
+@media(max-width:860px){.hero .g,.bg2,.calc,.ct{grid-template-columns:1fr}.calc>div:first-child{border-right:0;border-bottom:1px solid var(--ln)}.five,.steps,.strip{grid-template-columns:1fr 1fr}.cards,.lg{grid-template-columns:1fr}.nl a:not(.btn){display:none}.tb .r{grid-template-columns:1.2fr 1fr 1fr 1fr}.tb .r>div{padding:12px 10px;font-size:12px}.ct{padding:28px}section{padding:60px 0}}
+.vp{position:relative;overflow:hidden;background:#fff;width:100%}
+.vp iframe{border:0;display:block;transform-origin:0 0;background:#fff;transition:opacity .35s}
+.hint{padding:10px 16px;border-top:1px solid var(--ln);background:var(--p2);font-family:var(--m);font-size:11px;color:var(--mu)}
+.bg2 .br{align-self:start}
+@media(max-width:540px){.strip,.five,.steps{grid-template-columns:1fr}.strip div,.five div{border-right:0;border-bottom:1px solid var(--ln)}.ct{padding:22px}.sc small{font-size:9px}.hero .g>*{min-width:0}}
+</style><noscript><style>.rv{opacity:1;transform:none}</style></noscript></head><body>
+<a class="skip" href="#top">Zum Inhalt</a>
+
+<nav><div class="w"><a class="logo" href="#top">PLUG<b>MIL</b></a>
+<div class="nl"><a href="#branchen">branchen</a><a href="#ablauf">ablauf</a><a href="#preise">preise</a><a href="#faq">faq</a><a href="#live">projekte</a><a class="btn" href="#kontakt">anfragen</a></div></div></nav>
+
+<header class="hero" id="top"><div class="w"><div class="g">
+<div>
+  <span class="pill"><i class="dot"></i>Wildau · Schönefeld · remote</span>
+  <h1>Ihre Website. <em>Gebaut wie Software.</em></h1>
+  <p class="lead">Websites, Hosting und technische Unterstützung für kleine Unternehmen. Ich bin Jamil Dentel und bringe Ihren Webauftritt, Ihre Anfragen und passende kleine Automationen zusammen — mit einem direkten Ansprechpartner.</p>
+  <div class="ctas"><a class="btn" href="#kontakt">Kostenloses Angebot anfragen →</a><a class="btn o" href="#preise">Leistungsumfang ansehen</a></div>
+  <div class="trust"><span>Persönliches Angebot</span><span>Klare Leistungen</span><span>Direkter Kontakt</span><span>Betreuung auf Wunsch</span></div>
+</div>
+<div class="br rv"><div class="bar"><i></i><i></i><i></i><div class="url" id="hurl"></div></div>
+<div class="vp" id="hvp" data-h="400"><iframe id="hfr" sandbox="allow-scripts" title="Vorschau"></iframe></div>
+<div class="sc"><div><b>3</b><small>Beispielbranchen</small></div><div><b>1</b><small>Ansprechpartner</small></div><div><b>Web</b><small>&amp; Betreuung</small></div></div></div>
+</div></div></header>
+
+<div class="w"><div class="strip rv">
+<div><b>Ihr Auftritt</b><span>Gestaltung passend zu Ihrem Unternehmen.</span></div>
+<div><b>Mobil</b><span>Inhalte und Kontakt auf kleinen Bildschirmen.</span></div>
+<div><b>Übersichtlich</b><span>Leistungen, Kontakt und nächste Schritte.</span></div>
+<div><b>1 Ansprechpartner</b><span>Vom Entwurf bis zum laufenden Betrieb.</span></div>
+</div></div>
+
+<section id="branchen"><div class="w rv">
+<div class="eyebrow">01 · Für wen</div><h2>Gebaut für Ihre Branche</h2>
+<p class="lead">Klicken Sie durch die drei fiktiven Designbeispiele. Sie zeigen mögliche Gestaltungen für Ihre Branche; die enthaltenen Firmen, Kennzahlen und Kontaktdaten sind Musterdaten.</p>
+<div class="tabs" id="tabs"><button class="on" data-i="0">Handwerk</button><button data-i="1">Arztpraxis</button><button data-i="2">Kanzlei</button></div>
+<div class="bg2"><div class="bl" id="bl"></div>
+<div class="br"><div class="bar"><i></i><i></i><i></i><div class="url" id="bu"></div></div>
+<div class="vp" id="bvp" data-h="520"><iframe id="bfr" sandbox="allow-scripts" title="Vorschau"></iframe></div>
+<div class="hint">↕ Interaktive Beispielseite · Gestaltung und Umfang werden individuell vereinbart.</div></div>
+</div></div></section>
+
+<section><div class="w rv">
+<div class="eyebrow">02 · Leistungen</div><h2>Websites, gebaut wie Software</h2>
+<p class="lead">Wir beginnen mit dem, was Ihnen im Alltag hilft: eine verständliche Website, funktionierende Anfragen und verlässliche technische Betreuung.</p>
+<div class="five">
+<div><i>01</i><h4>Websites &amp; Web-Apps</h4><p>React, Next.js und TypeScript — schnell, mobil, sauber strukturiert.</p></div>
+<div><i>02</i><h4>Anfragen &amp; E-Mail</h4><p>Kontaktformulare, Postfach-Anbindung und klare Wege für neue Kundenanfragen.</p></div>
+<div><i>03</i><h4>Technische Hilfe</h4><p>Fehler eingrenzen, bestehende Websites pflegen und passende Lösungen einrichten.</p></div>
+<div><i>04</i><h4>Betrieb</h4><p>Deployment, Docker, Hosting: gepflegt statt nur gebaut.</p></div>
+<div><i>05</i><h4>Automation &amp; KI</h4><p>Zum Beispiel Anfragen sortieren, Übergaben vereinfachen und vorhandene Werkzeuge verbinden.</p></div></div>
+</div></section>
+
+<section id="ablauf"><div class="w rv">
+<div class="eyebrow">03 · Ablauf</div><h2>Vom Gespräch zur Live-Seite</h2>
+<p class="lead">Sie erhalten einen klaren Leistungsumfang. Umsetzung, Preis und laufende Betreuung werden vor dem Start vereinbart.</p>
+<div class="steps">
+<div class="st"><div class="n">01</div><h4>Kurzes Gespräch</h4><p>15 Minuten: Was machen Sie, wen wollen Sie erreichen, was soll die Seite leisten?</p><div class="t">Tag 1</div></div>
+<div class="st"><div class="n">02</div><h4>Entwurf</h4><p>Wir legen Inhalte und Funktionen fest. Der Entwurf macht den geplanten Auftritt konkret.</p><div class="t">Nach wenigen Tagen</div></div>
+<div class="st"><div class="n">03</div><h4>Feinschliff &amp; Launch</h4><p>Ihre Änderungen, Texte, Fotos, Domain — dann geht die Seite live.</p><div class="t">Launch</div></div>
+<div class="st"><div class="n">04</div><h4>Dauerhaft betreut</h4><p>Auf Wunsch: Hosting, Updates, Backups und vereinbarte Inhaltsänderungen.</p><div class="t">Laufend</div></div>
+</div></div></section>
+
+<section id="preise"><div class="w rv">
+<div class="eyebrow">04 · Preise</div><h2>Ein Angebot mit klarem Umfang</h2>
+<p class="lead">Sie bekommen ein individuelles Angebot für Ihren Bedarf. Einmalige Erstellung, laufende Betreuung und zusätzliche Funktionen werden separat aufgeführt.</p>
+<div class="cards">
+<div class="card"><div class="h"><span>Website</span><span>einmalig</span></div><div class="b"><div class="big">Fair kalkuliert</div><span class="tag">Umfang vor Projektstart</span>
+<ul><li>Gestaltung passend zu Ihrem Betrieb</li><li>Mobil optimiert</li><li>Schnelle Ladezeiten</li><li>Saubere SEO-Grundlagen</li><li>Einbindung Ihrer Rechtstexte</li></ul><a class="btn o" href="#kontakt">Festpreis anfragen</a></div></div>
+<div class="card hl"><div class="h"><span>Hosting &amp; Wartung</span><span>monatlich</span></div><div class="b"><div class="big">Nach Umfang <small>/ Monat</small></div><span class="tag">Betreuung vereinbaren</span>
+<ul><li>Hosting</li><li>Updates &amp; Sicherheit</li><li>Backups &amp; Monitoring</li><li>Vereinbarte Inhaltsänderungen</li><li>Klare Laufzeit und Kündigung</li></ul><a class="btn" href="#kontakt">Angebot anfragen</a></div></div>
+<div class="card"><div class="h"><span>Alles weitere</span><span>Projekt</span></div><div class="b"><div class="big">auf Anfrage</div><span class="tag">Nach Aufwand</span>
+<ul><li>Web-Apps</li><li>Schnittstellen</li><li>Automationen &amp; KI</li><li>Erweiterungen bestehender Seiten</li></ul><a class="btn o" href="#kontakt">Projekt besprechen</a></div></div>
+</div>
+
+<div class="calc rv">
+<div><h3>Ihr Projekt</h3><div class="sb">Welche Inhalte und Funktionen werden gebraucht?</div>
+<div class="sl"><label for="pg">Geplante Inhaltsseiten</label><b id="pv">5</b></div><input type="range" id="pg" min="1" max="20" value="5">
+<div class="ck" id="ck"><label><input type="checkbox" value="Terminbuchung">Terminbuchung</label><label><input type="checkbox" value="Mehrsprachigkeit">Mehrsprachigkeit</label><label><input type="checkbox" value="News / Blog">News / Blog</label><label><input type="checkbox" value="Anfrageformular">Anfrageformular</label><label><input type="checkbox" value="Technische Betreuung">Technische Betreuung</label></div></div>
+<div class="res"><h3>Ihre Auswahl</h3><p id="project-summary" aria-live="polite"></p><p class="form-note" style="margin:16px 0">Die Auswahl hilft beim ersten Gespräch. Einen konkreten Preis erhalten Sie mit dem vereinbarten Leistungsumfang.</p><a class="btn o" href="#kontakt" id="use-project">Auswahl in Anfrage übernehmen</a></div>
+</div></div></section>
+
+<section id="faq"><div class="w rv">
+<div class="eyebrow">05 · FAQ</div><h2>Häufige Fragen</h2>
+<div class="fq" id="fq">
+<div class="o"><button>Wie wird der Preis für mein Projekt festgelegt?</button><p>Wir klären Seitenumfang, Inhalte, Funktionen und Betreuung. Daraus entsteht ein schriftliches Angebot mit den enthaltenen Leistungen und den Konditionen für zusätzliche Arbeiten.</p></div>
+<div><button>Was passiert, wenn mir der Entwurf nicht gefällt?</button><p>Wir besprechen die Richtung und die vereinbarten Korrekturen gemeinsam. Der Ablauf und die Abnahme werden im Angebot festgehalten.</p></div>
+<div><button>Gehört die Website am Ende mir?</button><p>Nutzungsrechte, Domainzugang und die Übergabe des Projekts werden schriftlich vereinbart. Hosting und Betreuung können separat beauftragt werden.</p></div>
+<div><button>Was ist im monatlichen Hosting enthalten?</button><p>Je nach Vereinbarung: Hosting, technische Updates, Backups, Monitoring und Inhaltsänderungen. Im Angebot steht, welche Leistungen enthalten sind.</p></div>
+<div><button>Ich habe schon eine Website — geht das auch?</button><p>Ja. Wir modernisieren bestehende Seiten oder bauen sie komplett neu, inklusive Umzug der Inhalte.</p></div>
+</div></div></section>
+
+<section id="live"><div class="w rv">
+<div class="eyebrow">06 · Eigene Entwicklung</div><h2>Was ich selbst entwickle</h2>
+<p class="lead">Meine eigenen Softwareprojekte zeigen, woran ich technisch arbeite. PlugPT, PlugBrain, PlugMail und mains.gg befinden sich in Entwicklung.</p>
+<div class="lg">
+<a class="lc" href="https://plugmil.dev" target="_blank" rel="noopener"><div class="k">Dienstleistungen</div><h4>plugmil.dev</h4><p>Mein Angebot für Websites, Hosting, technische Hilfe und passende Automationen.</p><div class="l">plugmil.dev ↗</div></a>
+<a class="lc" href="https://plugpt.dev" target="_blank" rel="noopener"><div class="k">Eigenprojekt · in Entwicklung</div><h4>PlugPT &amp; PlugBrain</h4><p>Werkzeuge für KI-Aufgaben, Projektwissen und die Zusammenarbeit mit Software-Agenten.</p><div class="l">plugpt.dev ↗</div></a>
+<a class="lc" href="https://mains.gg" target="_blank" rel="noopener"><div class="k">Eigenprojekt · in Entwicklung</div><h4>mains.gg</h4><p>Eine geplante Gaming- und Community-Plattform. Produktidee und technische Umsetzung werden weiterentwickelt.</p><div class="l">mains.gg ↗</div></a>
+</div></div></section>
+
+<section id="kontakt"><div class="w rv"><div class="ct">
+<div><div class="eyebrow">07 · Kontakt</div><h2>Projekt anfragen</h2><p class="lead">Erzählen Sie kurz, was Sie brauchen und welche Website oder Werkzeuge schon vorhanden sind. Ich antworte persönlich per E-Mail.</p>
+<div class="trust" style="flex-direction:column;gap:8px"><span>Erste Anfrage unverbindlich</span><span>Jamil Dentel · plugmil</span><span><a href="mailto:litbitrim@gmail.com">litbitrim@gmail.com</a></span></div></div>
+<form id="fm" action="/api/contact" method="post">
+<label for="fn">Name / Firma</label><input type="text" id="fn" name="name" autocomplete="name" placeholder="Ihr Name oder Unternehmen" minlength="2" maxlength="120" required>
+<label for="fe">E-Mail-Adresse</label><input type="email" id="fe" name="email" autocomplete="email" placeholder="name@unternehmen.de" maxlength="254" required>
+<label for="fb">Worum geht es?</label><select id="fb" name="service"><option value="website">Neue Website / Relaunch</option><option value="maintenance">Hosting / Betreuung</option><option value="support">Technische Hilfe</option><option value="automation">Automation / KI-Integration</option><option value="other">Anderes Projekt</option></select>
+<label for="fm2">Ihre Nachricht</label><textarea id="fm2" name="message" placeholder="Was soll verbessert oder aufgebaut werden?" minlength="10" maxlength="5000" required></textarea>
+<div class="hp" aria-hidden="true"><label for="website">Dieses Feld frei lassen</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<label class="consent"><input type="checkbox" id="privacy" name="privacy" required><span>Ich habe die <a href="#datenschutz" style="text-decoration:underline">Hinweise zur Kontaktaufnahme</a> gelesen.</span></label>
+<button class="btn" id="contact-submit" type="submit" style="justify-content:center">Anfrage senden →</button>
+<p class="form-status" id="contact-status" role="status" aria-live="polite" hidden></p>
+<p class="form-note">Direkt per E-Mail erreichbar: <a href="mailto:litbitrim@gmail.com">litbitrim@gmail.com</a></p>
+<noscript><p class="form-note">Für das Formular wird JavaScript benötigt. Sie können Ihre Anfrage direkt an <a href="mailto:litbitrim@gmail.com">litbitrim@gmail.com</a> senden.</p></noscript>
+</form></div></div></section>
+<section id="datenschutz"><div class="w"><div class="eyebrow">Kontaktaufnahme</div><h2>Was mit Ihrer Anfrage passiert</h2><p class="lead">Verantwortlicher Ansprechpartner ist Jamil Dentel (plugmil), erreichbar unter <a href="mailto:litbitrim@gmail.com">litbitrim@gmail.com</a>. Name, E-Mail-Adresse, gewählte Leistung und Nachricht werden zur Bearbeitung Ihrer Anfrage per E-Mail übermittelt. Der technische Versand erfolgt über Resend an dieses Postfach. Für den Missbrauchsschutz werden kurzzeitig Zähler mit einem nicht öffentlich zurückrechenbaren Kennwert Ihrer IP-Adresse und E-Mail-Adresse in Redis verarbeitet; Nachrichtentexte werden dort nicht gespeichert. Das Formular meldet die Annahme durch den Versanddienst. Bei Fragen zur Verarbeitung schreiben Sie an die genannte E-Mail-Adresse.</p></div></section>
+<footer><div class="w"><span>© 2026 Jamil Dentel · PLUGMIL</span><span><a href="/imprint/">Impressum</a> · <a href="#datenschutz">Kontakt-Datenschutzhinweise</a> · <a href="https://github.com/litbitrim" target="_blank" rel="noopener">GitHub</a></span></div></footer>
+
+<div hidden id="docs">
+<div data-doc="<!doctype html>
+<html lang=&quot;de&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>Nordlicht Elektrotechnik — Meisterbetrieb (Beispiel)</title>
+<style>
+  :root{
+    --ink:#12140f; --paper:#f7f6f2; --panel:#ffffff; --line:#e2e0d8; --grey:#6f7166;
+    --brand:#146b4b; --brand2:#1f8a60; --accent:#e8a33d;
+    --sans:&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Segoe UI&quot;,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .w{max-width:1180px;margin:0 auto;padding:0 22px}
+  .beispiel{background:#fff3d6;border-bottom:1px solid #e8d9a8;color:#7a5c14;font-size:12px;text-align:center;padding:7px 12px;letter-spacing:.04em}
+  .beispiel b{text-transform:uppercase;letter-spacing:.14em}
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,246,242,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1180px;margin:0 auto}
+  .logo{font-weight:800;font-size:19px;letter-spacing:-.03em;display:flex;align-items:center;gap:9px}
+  .logo i{width:26px;height:26px;background:var(--brand);display:grid;place-items:center;color:#fff;font-style:normal;font-size:13px;border-radius:5px}
+  .nav a.l{color:var(--grey);text-decoration:none;font-size:14px;transition:.25s}.nav a.l:hover{color:var(--brand)}
+  .navlinks{display:flex;gap:24px}
+  .nav .cta{background:var(--brand);color:#fff;text-decoration:none;padding:10px 18px;border-radius:6px;font-size:13.5px;font-weight:600;transition:.3s}
+  .nav .cta:hover{background:var(--brand2)}
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#0f2e22,#146b4b);color:#fff;padding:80px 0 90px;position:relative;overflow:hidden}
+  .hero::after{content:&quot;&quot;;position:absolute;right:-120px;top:-120px;width:460px;height:460px;background:radial-gradient(circle,rgba(255,255,255,.13),transparent 65%)}
+  .hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative;z-index:2}
+  .hero .tag{display:inline-block;border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:6px 14px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+  .hero h1{font-size:clamp(32px,5vw,56px);line-height:1.04;letter-spacing:-.03em;font-weight:800}
+  .hero p{margin-top:20px;color:#cfe6da;font-size:17px;line-height:1.7;max-width:520px}
+  .hero-btns{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;border-radius:7px;text-decoration:none;font-size:14px;font-weight:600;transition:.3s;border:1px solid transparent}
+  .btn-a{background:var(--accent);color:#14140f}.btn-a:hover{background:#f5b954;transform:translateY(-2px)}
+  .btn-b{border-color:rgba(255,255,255,.35);color:#fff}.btn-b:hover{background:rgba(255,255,255,.12)}
+  .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:26px;backdrop-filter:blur(6px)}
+  .hero-card h4{font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#a9d6c2;margin-bottom:16px}
+  .hero-card ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .hero-card li{font-size:14.5px;color:#eaf5ee;padding-left:24px;position:relative;line-height:1.5}
+  .hero-card li::before{content:&quot;✓ &quot;;position:absolute;left:0;color:var(--accent);font-weight:700}
+  /* SECTIONS */
+  section{padding:76px 0}
+  .sec-head{margin-bottom:44px;max-width:640px}
+  .sec-head .k{color:var(--brand);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.03em;font-weight:800;line-height:1.1}
+  .sec-head p{color:var(--grey);margin-top:14px;font-size:16px;line-height:1.7}
+  .karten{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .karte{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;transition:.35s}
+  .karte:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(18,20,15,.08);border-color:var(--brand)}
+  .karte i{width:44px;height:44px;background:#e6f2ec;color:var(--brand);border-radius:10px;display:grid;place-items:center;font-size:20px;font-style:normal;margin-bottom:18px}
+  .karte h3{font-size:19px;letter-spacing:-.02em;margin-bottom:10px}
+  .karte p{font-size:14.5px;color:var(--grey);line-height:1.65}
+  /* ABOUT */
+  .about{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-in{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .about-in h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.03em;font-weight:800;line-height:1.12;margin-bottom:20px}
+  .about-in p{color:var(--grey);font-size:16px;line-height:1.8;margin-bottom:16px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px}
+  .fact b{display:block;font-size:26px;color:var(--brand);letter-spacing:-.03em}
+  .fact span{font-size:12.5px;color:var(--grey);display:block;margin-top:6px}
+  .bild{background:linear-gradient(150deg,#e9efe9,#d3e0d7);border-radius:14px;height:340px;display:grid;place-items:center;border:1px solid var(--line)}
+  .bild span{font-size:60px;opacity:.35}
+  /* KONTAKT */
+  .kontakt{background:#0f2e22;color:#fff}
+  .kontakt-in{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  .kontakt h2{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.03em;font-weight:800;line-height:1.1;margin-bottom:18px}
+  .kontakt p{color:#bcd7c9;font-size:16px;line-height:1.75;margin-bottom:26px}
+  .krow{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+  .krow b{color:var(--accent);font-size:15px;min-width:20px}
+  .krow div{font-size:15px;color:#eaf5ee;line-height:1.5}
+  .krow div span{display:block;color:#9fb8ab;font-size:13px;margin-top:3px}
+  form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:28px}
+  form label{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#a9c8b9;margin-bottom:7px}
+  form input,form textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:14.5px;margin-bottom:18px}
+  form textarea{min-height:96px;resize:vertical}
+  form button{width:100%;padding:15px;background:var(--accent);color:#14140f;border:0;border-radius:8px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.3s}
+  form button:hover{background:#f5b954}
+  footer{background:#0b1f18;color:#8fa89b;padding:34px 0;font-size:13px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .foot a{color:#8fa89b;text-decoration:none}.foot a:hover{color:#fff}
+  @media(max-width:880px){
+    .hero-in,.about-in,.kontakt-in,.karten{grid-template-columns:1fr;gap:30px}
+    .navlinks{display:none}
+    .bild{height:240px}
+  }
+</style>
+</head>
 <body>
-<p>Platzhalter. Diese Datei wird gleich durch die Landingpage ersetzt.</p>
+<div class=&quot;beispiel&quot;><b>Beispiel</b> · Muster-Website für einen erfundenen Betrieb · keine echte Marke</div>
+<nav><div class=&quot;nav&quot;>
+  <div class=&quot;logo&quot;><i>N</i>Nordlicht Elektrotechnik</div>
+  <div class=&quot;navlinks&quot;>
+    <a class=&quot;l&quot; href=&quot;#startseite&quot;>Startseite</a><a class=&quot;l&quot; href=&quot;#leistungen&quot;>Leistungen</a><a class=&quot;l&quot; href=&quot;#ueberuns&quot;>Über uns</a><a class=&quot;l&quot; href=&quot;#kontakt&quot;>Kontakt</a>
+  </div>
+  <a class=&quot;cta&quot; href=&quot;#kontakt&quot;>Termin anfragen</a>
+</div></nav>
+
+<header class=&quot;hero&quot; id=&quot;startseite&quot;><div class=&quot;w hero-in&quot;>
+  <div>
+    <span class=&quot;tag&quot;>Meisterbetrieb · seit 1998</span>
+    <h1>Elektrotechnik, die hält —<br>sauber geplant und ausgeführt.</h1>
+    <p>Vom Sicherungskasten bis zur kompletten Gebäudeverkabelung: Wir arbeiten termingerecht, dokumentiert und mit Festpreis. Ihr Betrieb in der Region, verlässlich an Ihrer Seite.</p>
+    <div class=&quot;hero-btns&quot;>
+      <a class=&quot;btn btn-a&quot; href=&quot;#kontakt&quot;>Kostenlos anfragen</a>
+      <a class=&quot;btn btn-b&quot; href=&quot;#leistungen&quot;>Leistungen ansehen</a>
+    </div>
+  </div>
+  <div class=&quot;hero-card&quot;>
+    <h4>Was wir für Sie übernehmen</h4>
+    <ul>
+      <li>Elektroinstallation Neubau &amp;amp; Sanierung</li>
+      <li>Smart-Home &amp;amp; Gebäudetechnik</li>
+      <li>Photovoltaik &amp;amp; Wallbox</li>
+      <li>Sicherheits- und Prüfarbeiten</li>
+      <li>Wartung mit festen Terminen</li>
+    </ul>
+  </div>
+</div></header>
+
+<section id=&quot;leistungen&quot;><div class=&quot;w&quot;>
+  <div class=&quot;sec-head&quot;><div class=&quot;k&quot;>Leistungen</div><h2>Alles rund um Elektro — aus einer Hand.</h2>
+    <p>Klare Pakete, transparente Preise, feste Ansprechpartner. Wir erklären jeden Schritt, bevor wir ihn gehen.</p></div>
+  <div class=&quot;karten&quot;>
+    <div class=&quot;karte&quot;><i>⚡</i><h3>Elektroinstallation</h3><p>Neubau, Sanierung, Erweiterung — normgerecht, dokumentiert und abnahmefähig.</p></div>
+    <div class=&quot;karte&quot;><i>🏠</i><h3>Smart Home</h3><p>Licht, Heizung, Beschattung und Sicherheit zentral steuern — herstellerunabhängig geplant.</p></div>
+    <div class=&quot;karte&quot;><i>☀️</i><h3>Photovoltaik</h3><p>Planung, Montage und Anmeldung Ihrer PV-Anlage inklusive Speicher und Wallbox.</p></div>
+    <div class=&quot;karte&quot;><i>🔧</i><h3>Wartung</h3><p>Regelmäßige Prüfung und Wartung mit festem Terminplan — Ausfälle vermeiden.</p></div>
+    <div class=&quot;karte&quot;><i>🧰</i><h3>Notdienst</h3><p>Störung? Wir sind schnell vor Ort und beheben das Problem zuverlässig.</p></div>
+    <div class=&quot;karte&quot;><i>📋</i><h3>Beratung</h3><p>Ehrliche Einschätzung, Förderfähigkeit und Festpreisangebot vor jedem Auftrag.</p></div>
+  </div>
+</div></section>
+
+<section class=&quot;about&quot; id=&quot;ueberuns&quot;><div class=&quot;w about-in&quot;>
+  <div>
+    <h2>Ein Meisterbetrieb, dem man die Arbeit ansieht.</h2>
+    <p>Wir sind ein regionales Elektrotechnik-Unternehmen mit eigenem Team. Kein Subunternehmer-Roulette, keine unklaren Rechnungen — sondern Handwerk, das wir mit unserem Namen unterschreiben.</p>
+    <p>Ob Einfamilienhaus, Gewerbe oder Zulieferbetrieb: Wir planen vorausschauend, arbeiten sauber und bleiben auch nach der Übergabe Ihr Ansprechpartner.</p>
+    <div class=&quot;facts&quot;>
+      <div class=&quot;fact&quot;><b>25+</b><span>Jahre Erfahrung im Elektrohandwerk</span></div>
+      <div class=&quot;fact&quot;><b>Feste</b><span>Ansprechpartner statt Hotline</span></div>
+      <div class=&quot;fact&quot;><b>Festpreis</b><span>Angebot vor Auftrag, ohne Überraschung</span></div>
+      <div class=&quot;fact&quot;><b>Meister</b><span>Eingetragener Meisterbetrieb</span></div>
+    </div>
+  </div>
+  <div class=&quot;bild&quot;><span>⚡</span></div>
+</div></section>
+
+<section class=&quot;kontakt&quot; id=&quot;kontakt&quot;><div class=&quot;w kontakt-in&quot;>
+  <div>
+    <h2>Reden wir über Ihr Projekt.</h2>
+    <p>Senden Sie uns kurz Ihre Anfrage. Wir melden uns mit einer ehrlichen Einschätzung und einem Terminvorschlag.</p>
+    <div class=&quot;krow&quot;><b>☎</b><div>0123 456789<span>Mo–Fr 7:30–17:00 Uhr</span></div></div>
+    <div class=&quot;krow&quot;><b>✉</b><div>info@nordlicht-elektro.example<span>Antwort innerhalb eines Werktags</span></div></div>
+    <div class=&quot;krow&quot;><b>📍</b><div>Musterstraße 12, 12345 Musterstadt<span>Einsatzgebiet: Region Musterstadt</span></div></div>
+  </div>
+  <form onsubmit=&quot;event.preventDefault();alert('Beispielfunktion — kein Versand.');&quot;>
+    <label>Ihr Name</label><input type=&quot;text&quot; placeholder=&quot;Vor- und Nachname&quot;>
+    <label>E-Mail</label><input type=&quot;email&quot; placeholder=&quot;name@beispiel.de&quot;>
+    <label>Ihr Anliegen</label><textarea placeholder=&quot;Beschreiben Sie kurz Ihr Vorhaben …&quot;></textarea>
+    <button type=&quot;submit&quot;>Anfrage senden</button>
+  </form>
+</div></section>
+
+<footer><div class=&quot;w foot&quot;>
+  <div>© Nordlicht Elektrotechnik (Beispiel) · Musterbetrieb ohne echte Marke</div>
+  <div>Beispielseite von <a href=&quot;https://plugmil.dev/&quot;>plugmil.dev</a></div>
+</div></footer>
 </body>
 </html>
+"></div>
+<div data-doc="<!doctype html>
+<html lang=&quot;de&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>Praxis am Stadtpark — Hausärztliche Praxis (Beispiel)</title>
+<style>
+  :root{
+    --ink:#152230; --paper:#f6f8f9; --panel:#ffffff; --line:#dce4e8; --grey:#61707c;
+    --brand:#1c6f96; --brand2:#2a8ab5; --soft:#e8f2f7;
+    --sans:&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Segoe UI&quot;,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .w{max-width:1140px;margin:0 auto;padding:0 22px}
+  .beispiel{background:#e6f2f8;border-bottom:1px solid #c7e0ee;color:#215c7a;font-size:12px;text-align:center;padding:7px 12px}
+  .beispiel b{text-transform:uppercase;letter-spacing:.14em}
+  nav{position:sticky;top:0;z-index:50;background:rgba(246,248,249,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;max-width:1140px;margin:0 auto}
+  .logo{font-weight:700;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+  .logo i{width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--brand);display:grid;place-items:center;font-style:normal;font-size:15px}
+  .navlinks{display:flex;gap:22px}
+  .navlinks a{color:var(--grey);text-decoration:none;font-size:14px;transition:.25s}.navlinks a:hover{color:var(--brand)}
+  .nav .cta{background:var(--brand);color:#fff;text-decoration:none;padding:10px 18px;border-radius:100px;font-size:13.5px;font-weight:600;transition:.3s}
+  .nav .cta:hover{background:var(--brand2)}
+  /* HERO */
+  .hero{background:linear-gradient(150deg,#eef6fa,#dcecf4);padding:70px 0 80px;border-bottom:1px solid var(--line)}
+  .hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+  .hero h1{font-size:clamp(30px,4.6vw,50px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+  .hero p{margin-top:18px;color:var(--grey);font-size:17px;line-height:1.72;max-width:500px}
+  .hero-btns{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:600;transition:.3s;border:1px solid transparent}
+  .btn-a{background:var(--brand);color:#fff}.btn-a:hover{background:var(--brand2);transform:translateY(-2px)}
+  .btn-b{border-color:var(--brand);color:var(--brand)}.btn-b:hover{background:var(--soft)}
+  .zeiten{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 12px 34px rgba(21,34,48,.06)}
+  .zeiten h4{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:18px}
+  .zeile{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .zeile:last-child{border-bottom:0}
+  .zeile span{color:var(--grey)}.zeile b{font-weight:600}
+  .hinweis{margin-top:18px;background:var(--soft);border-radius:10px;padding:12px 14px;font-size:13px;color:#2c5a75;line-height:1.55}
+  /* SECTIONS */
+  section{padding:72px 0}
+  .sec-head{margin-bottom:42px;max-width:640px}
+  .sec-head .k{color:var(--brand);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(25px,3.2vw,38px);letter-spacing:-.03em;font-weight:800;line-height:1.12}
+  .sec-head p{color:var(--grey);margin-top:14px;font-size:16px;line-height:1.7}
+  .karten{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .karte{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;transition:.35s}
+  .karte:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(21,34,48,.07);border-color:var(--brand)}
+  .karte i{width:46px;height:46px;background:var(--soft);color:var(--brand);border-radius:12px;display:grid;place-items:center;font-size:21px;font-style:normal;margin-bottom:18px}
+  .karte h3{font-size:18.5px;letter-spacing:-.02em;margin-bottom:10px}
+  .karte p{font-size:14.5px;color:var(--grey);line-height:1.65}
+  .about{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-in{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .about-in h2{font-size:clamp(25px,3.2vw,38px);letter-spacing:-.03em;font-weight:800;line-height:1.14;margin-bottom:18px}
+  .about-in p{color:var(--grey);font-size:16px;line-height:1.8;margin-bottom:15px}
+  .team{display:flex;gap:16px;margin-top:26px;flex-wrap:wrap}
+  .member{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;flex:1;min-width:150px}
+  .member b{display:block;font-size:15px;margin-bottom:4px}
+  .member span{font-size:13px;color:var(--grey);line-height:1.5}
+  .bild{background:linear-gradient(150deg,#e3eef4,#d2e4ee);border-radius:16px;height:330px;display:grid;place-items:center;border:1px solid var(--line)}
+  .bild span{font-size:58px;opacity:.4}
+  /* KONTAKT */
+  .kontakt{background:#15374a;color:#fff}
+  .kontakt-in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .kontakt h2{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.03em;font-weight:800;line-height:1.1;margin-bottom:16px}
+  .kontakt p{color:#bcd4e0;font-size:16px;line-height:1.75;margin-bottom:24px}
+  .krow{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+  .krow b{color:#7fc0dd;font-size:15px;min-width:20px}
+  .krow div{font-size:15px;color:#eaf4f8;line-height:1.5}
+  .krow div span{display:block;color:#9dbdcd;font-size:13px;margin-top:3px}
+  form{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:28px}
+  form label{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#a8c6d4;margin-bottom:7px}
+  form input,form textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:14.5px;margin-bottom:18px}
+  form textarea{min-height:92px;resize:vertical}
+  form button{width:100%;padding:15px;background:#7fc0dd;color:#0f2a38;border:0;border-radius:9px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.3s}
+  form button:hover{background:#a5d6ea}
+  footer{background:#0f2733;color:#8aa6b4;padding:32px 0;font-size:13px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .foot a{color:#8aa6b4;text-decoration:none}.foot a:hover{color:#fff}
+  @media(max-width:880px){
+    .hero-in,.about-in,.kontakt-in,.karten{grid-template-columns:1fr;gap:30px}
+    .navlinks{display:none}.bild{height:230px}
+  }
+</style>
+</head>
+<body>
+<div class=&quot;beispiel&quot;><b>Beispiel</b> · Muster-Website für eine erfundene Praxis · keine echte Marke</div>
+<nav><div class=&quot;nav&quot;>
+  <div class=&quot;logo&quot;><i>✚</i>Praxis am Stadtpark</div>
+  <div class=&quot;navlinks&quot;>
+    <a href=&quot;#startseite&quot;>Startseite</a><a href=&quot;#leistungen&quot;>Leistungen</a><a href=&quot;#ueberuns&quot;>Über uns</a><a href=&quot;#kontakt&quot;>Kontakt</a>
+  </div>
+  <a class=&quot;cta&quot; href=&quot;#kontakt&quot;>Termin anfragen</a>
+</div></nav>
+
+<header class=&quot;hero&quot; id=&quot;startseite&quot;><div class=&quot;w hero-in&quot;>
+  <div>
+    <h1>Ihre Hausarztpraxis —<br>nah, ruhig, gut erreichbar.</h1>
+    <p>Wir nehmen uns Zeit für Ihre Anliegen: von der Vorsorge über die Akutbehandlung bis zur Begleitung bei chronischen Erkrankungen. Moderne Praxis, persönliche Betreuung.</p>
+    <div class=&quot;hero-btns&quot;>
+      <a class=&quot;btn btn-a&quot; href=&quot;#kontakt&quot;>Termin anfragen</a>
+      <a class=&quot;btn btn-b&quot; href=&quot;#leistungen&quot;>Leistungen ansehen</a>
+    </div>
+  </div>
+  <div class=&quot;zeiten&quot;>
+    <h4>Sprechzeiten</h4>
+    <div class=&quot;zeile&quot;><span>Montag – Donnerstag</span><b>08:00 – 12:00</b></div>
+    <div class=&quot;zeile&quot;><span>Montag, Dienstag, Donnerstag</span><b>15:00 – 18:00</b></div>
+    <div class=&quot;zeile&quot;><span>Freitag</span><b>08:00 – 12:00</b></div>
+    <div class=&quot;hinweis&quot;>Termine bitte vorab telefonisch oder über das Kontaktformular vereinbaren. In dringenden Fällen wenden Sie sich bitte an den ärztlichen Bereitschaftsdienst.</div>
+  </div>
+</div></header>
+
+<section id=&quot;leistungen&quot;><div class=&quot;w&quot;>
+  <div class=&quot;sec-head&quot;><div class=&quot;k&quot;>Leistungen</div><h2>Allgemeinmedizin mit klarer Struktur.</h2>
+    <p>Wir behandeln Sie ganzheitlich — mit Zeit, Verständlichkeit und einem festen Ansprechpartner für Ihre Gesundheit.</p></div>
+  <div class=&quot;karten&quot;>
+    <div class=&quot;karte&quot;><i>🩺</i><h3>Hausärztliche Versorgung</h3><p>Ansprechpartner für alle gesundheitlichen Fragen, von der Akutbehandlung bis zur Langzeitbetreuung.</p></div>
+    <div class=&quot;karte&quot;><i>💉</i><h3>Vorsorge &amp;amp; Impfungen</h3><p>Vorsorgeuntersuchungen, Impfberatung und Auffrischungen nach aktuellen Empfehlungen.</p></div>
+    <div class=&quot;karte&quot;><i>📈</i><h3>Chronische Erkrankungen</h3><p>Begleitung bei Diabetes, Bluthochdruck und weiteren chronischen Erkrankungen.</p></div>
+    <div class=&quot;karte&quot;><i>🔬</i><h3>Diagnostik</h3><p>Blutabnahme, EKG und weitere Basisdiagnostik direkt in der Praxis.</p></div>
+    <div class=&quot;karte&quot;><i>👶</i><h3>Jugend &amp;amp; Familie</h3><p>Beratung und Versorgung für alle Altersgruppen — verständlich und einfühlsam.</p></div>
+    <div class=&quot;karte&quot;><i>📋</i><h3>Atteste &amp;amp; Formulare</h3><p>Atteste, Überweisungen und Formulare unkompliziert und zeitnah.</p></div>
+  </div>
+</div></section>
+
+<section class=&quot;about&quot; id=&quot;ueberuns&quot;><div class=&quot;w about-in&quot;>
+  <div>
+    <h2>Zuhören ist der erste Teil der Behandlung.</h2>
+    <p>Unsere Praxis steht für eine ruhige, gut organisierte Versorgung. Wir arbeiten mit modernen Abläufen, damit Sie sich auf das konzentrieren können, was zählt: Ihre Gesundheit.</p>
+    <p>Kurze Wege, klare Kommunikation und ein Team, das Sie kennt — nicht anonyme Fließbandmedizin.</p>
+    <div class=&quot;team&quot;>
+      <div class=&quot;member&quot;><b>Dr. med. Beispiel</b><span>Allgemeinmedizin · Praxisinhaberin</span></div>
+      <div class=&quot;member&quot;><b>Dr. med. Muster</b><span>Allgemeinmedizin</span></div>
+      <div class=&quot;member&quot;><b>Praxisteam</b><span>Medizinische Fachangestellte</span></div>
+    </div>
+  </div>
+  <div class=&quot;bild&quot;><span>✚</span></div>
+</div></section>
+
+<section class=&quot;kontakt&quot; id=&quot;kontakt&quot;><div class=&quot;w kontakt-in&quot;>
+  <div>
+    <h2>Termin oder Frage?</h2>
+    <p>Schreiben Sie uns kurz Ihr Anliegen. Wir melden uns mit einem passenden Terminvorschlag zurück.</p>
+    <div class=&quot;krow&quot;><b>☎</b><div>0123 456789<span>Während der Sprechzeiten</span></div></div>
+    <div class=&quot;krow&quot;><b>✉</b><div>praxis@stadtpark.example<span>Antwort innerhalb eines Werktags</span></div></div>
+    <div class=&quot;krow&quot;><b>📍</b><div>Parkstraße 4, 12345 Musterstadt<span>Barrierefreier Zugang</span></div></div>
+  </div>
+  <form onsubmit=&quot;event.preventDefault();alert('Beispielfunktion — kein Versand.');&quot;>
+    <label>Ihr Name</label><input type=&quot;text&quot; placeholder=&quot;Vor- und Nachname&quot;>
+    <label>E-Mail</label><input type=&quot;email&quot; placeholder=&quot;name@beispiel.de&quot;>
+    <label>Ihr Anliegen</label><textarea placeholder=&quot;Worum geht es? Möchten Sie einen Termin oder haben Sie eine Frage?&quot;></textarea>
+    <button type=&quot;submit&quot;>Anfrage senden</button>
+  </form>
+</div></section>
+
+<footer><div class=&quot;w foot&quot;>
+  <div>© Praxis am Stadtpark (Beispiel) · Musterbetrieb ohne echte Marke</div>
+  <div>Beispielseite von <a href=&quot;https://plugmil.dev/&quot;>plugmil.dev</a></div>
+</div></footer>
+</body>
+</html>
+"></div>
+<div data-doc="<!doctype html>
+<html lang=&quot;de&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>Kanzlei Feldmann — Steuerberatung (Beispiel)</title>
+<style>
+  :root{
+    --ink:#1b1b19; --paper:#f8f7f4; --panel:#ffffff; --line:#e0ddd4; --grey:#6b675e;
+    --brand:#7a5c2e; --brand2:#9a7640; --soft:#f1ece1;
+    --serif:&quot;Georgia&quot;,&quot;Times New Roman&quot;,serif;
+    --sans:&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Segoe UI&quot;,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .w{max-width:1160px;margin:0 auto;padding:0 24px}
+  .beispiel{background:#f3ecdc;border-bottom:1px solid #e3d7b8;color:#6e5a2a;font-size:12px;text-align:center;padding:7px 12px}
+  .beispiel b{text-transform:uppercase;letter-spacing:.14em}
+  nav{position:sticky;top:0;z-index:50;background:rgba(248,247,244,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto}
+  .logo{font-family:var(--serif);font-size:20px;letter-spacing:.01em}
+  .logo b{color:var(--brand);font-weight:400}
+  .navlinks{display:flex;gap:24px}
+  .navlinks a{color:var(--grey);text-decoration:none;font-size:13.5px;transition:.25s}.navlinks a:hover{color:var(--brand)}
+  .nav .cta{border:1px solid var(--brand);color:var(--brand);text-decoration:none;padding:9px 18px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;transition:.3s}
+  .nav .cta:hover{background:var(--brand);color:#fff}
+  /* HERO */
+  .hero{padding:76px 0 84px;border-bottom:1px solid var(--line)}
+  .hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+  .hero .k{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);margin-bottom:22px}
+  .hero h1{font-family:var(--serif);font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-.01em;font-weight:400}
+  .hero p{margin-top:22px;color:var(--grey);font-size:16.5px;line-height:1.78;max-width:540px}
+  .hero-btns{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;text-decoration:none;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;transition:.3s;border:1px solid transparent}
+  .btn-a{background:var(--brand);color:#fff}.btn-a:hover{background:var(--brand2);transform:translateY(-2px)}
+  .btn-b{border-color:var(--ink);color:var(--ink)}.btn-b:hover{background:var(--ink);color:#fff}
+  .sig{border-left:2px solid var(--brand);padding-left:24px}
+  .sig h4{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:14px}
+  .sig p{font-size:14.5px;color:var(--grey);line-height:1.75;margin-bottom:14px}
+  .sig ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .sig li{font-size:14.5px;color:#4b4840;padding-left:18px;position:relative}
+  .sig li::before{content:&quot;—&quot;;position:absolute;left:0;color:var(--brand)}
+  /* SECTIONS */
+  section{padding:74px 0}
+  .sec-head{margin-bottom:44px;max-width:640px}
+  .sec-head .k{color:var(--brand);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);font-weight:400;line-height:1.15}
+  .sec-head p{color:var(--grey);margin-top:14px;font-size:16px;line-height:1.72}
+  .karten{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .karte{background:var(--panel);border:1px solid var(--line);padding:30px 28px;transition:.35s}
+  .karte:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(27,27,25,.08);border-color:var(--brand)}
+  .karte .no{font-family:var(--serif);font-size:30px;color:var(--line);margin-bottom:16px}
+  .karte h3{font-size:19px;letter-spacing:-.01em;margin-bottom:10px;font-weight:600}
+  .karte p{font-size:14.5px;color:var(--grey);line-height:1.68}
+  .about{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-in{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .about-in h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,38px);font-weight:400;line-height:1.16;margin-bottom:18px}
+  .about-in p{color:var(--grey);font-size:16px;line-height:1.82;margin-bottom:15px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .fact{border-left:2px solid var(--brand);padding-left:16px}
+  .fact b{display:block;font-family:var(--serif);font-size:22px;margin-bottom:5px}
+  .fact span{font-size:13px;color:var(--grey);line-height:1.5}
+  .bild{background:linear-gradient(150deg,#efe9dd,#e0d7c4);height:340px;display:grid;place-items:center;border:1px solid var(--line)}
+  .bild span{font-size:56px;opacity:.4}
+  /* KONTAKT */
+  .kontakt{background:#232119;color:#fff}
+  .kontakt-in{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  .kontakt h2{font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);font-weight:400;line-height:1.1;margin-bottom:18px}
+  .kontakt p{color:#c4bdae;font-size:16px;line-height:1.75;margin-bottom:26px}
+  .krow{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+  .krow b{color:#c9a86a;font-size:15px;min-width:20px}
+  .krow div{font-size:15px;color:#f2efe6;line-height:1.5}
+  .krow div span{display:block;color:#a89f8c;font-size:13px;margin-top:3px}
+  form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:30px}
+  form label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c4bdae;margin-bottom:7px}
+  form input,form textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;font-family:inherit;font-size:14.5px;margin-bottom:18px}
+  form textarea{min-height:96px;resize:vertical}
+  form button{width:100%;padding:15px;background:#c9a86a;color:#232119;border:0;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:.3s}
+  form button:hover{background:#dcbe83}
+  footer{background:#1a1813;color:#8f8878;padding:34px 0;font-size:13px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .foot a{color:#8f8878;text-decoration:none}.foot a:hover{color:#fff}
+  @media(max-width:880px){
+    .hero-in,.about-in,.kontakt-in,.karten{grid-template-columns:1fr;gap:30px}
+    .navlinks{display:none}.bild{height:230px}
+  }
+</style>
+</head>
+<body>
+<div class=&quot;beispiel&quot;><b>Beispiel</b> · Muster-Website für eine erfundene Kanzlei · keine echte Marke</div>
+<nav><div class=&quot;nav&quot;>
+  <div class=&quot;logo&quot;>Kanzlei <b>Feldmann</b></div>
+  <div class=&quot;navlinks&quot;>
+    <a href=&quot;#startseite&quot;>Startseite</a><a href=&quot;#leistungen&quot;>Leistungen</a><a href=&quot;#ueberuns&quot;>Über uns</a><a href=&quot;#kontakt&quot;>Kontakt</a>
+  </div>
+  <a class=&quot;cta&quot; href=&quot;#kontakt&quot;>Erstgespräch</a>
+</div></nav>
+
+<header class=&quot;hero&quot; id=&quot;startseite&quot;><div class=&quot;w hero-in&quot;>
+  <div>
+    <p class=&quot;k&quot;>Steuerberatung · Wirtschaftsprüfung · Beratung</p>
+    <h1>Steuern mit Weitblick — damit Sie sich auf Ihr Geschäft konzentrieren können.</h1>
+    <p>Wir begleiten Unternehmen, Selbstständige und Privatpersonen mit klarer Beratung, verlässlichen Fristen und einem festen Ansprechpartner. Diskret, präzise, verständlich.</p>
+    <div class=&quot;hero-btns&quot;>
+      <a class=&quot;btn btn-a&quot; href=&quot;#kontakt&quot;>Erstgespräch vereinbaren</a>
+      <a class=&quot;btn btn-b&quot; href=&quot;#leistungen&quot;>Leistungen</a>
+    </div>
+  </div>
+  <div class=&quot;sig&quot;>
+    <h4>Ihr Nutzen</h4>
+    <p>Wir erklären Zahlen so, dass Entscheidungen leichter werden — ohne Fachjargon.</p>
+    <ul>
+      <li>Feste Ansprechpartner</li>
+      <li>Fristen im Griff</li>
+      <li>Vorausschauende Steuerplanung</li>
+      <li>Digitaler Austausch</li>
+    </ul>
+  </div>
+</div></header>
+
+<section id=&quot;leistungen&quot;><div class=&quot;w&quot;>
+  <div class=&quot;sec-head&quot;><div class=&quot;k&quot;>Leistungen</div><h2>Beratung, die strukturiert und verständlich bleibt.</h2>
+    <p>Von der laufenden Buchhaltung bis zur individuellen Steuergestaltung — wir bündeln, was zusammengehört.</p></div>
+  <div class=&quot;karten&quot;>
+    <div class=&quot;karte&quot;><div class=&quot;no&quot;>01</div><h3>Finanzbuchhaltung</h3><p>Laufende Buchhaltung, Lohn und Abschlüsse — termingerecht und nachvollziehbar aufbereitet.</p></div>
+    <div class=&quot;karte&quot;><div class=&quot;no&quot;>02</div><h3>Steuererklärungen</h3><p>Erstellung und Prüfung aller Erklärungen für Unternehmen und Privatpersonen.</p></div>
+    <div class=&quot;karte&quot;><div class=&quot;no&quot;>03</div><h3>Jahresabschluss</h3><p>Bilanz, Gewinnermittlung und Offenlegung mit Blick auf Ihre Ziele.</p></div>
+    <div class=&quot;karte&quot;><div class=&quot;no&quot;>04</div><h3>Steuergestaltung</h3><p>Vorausschauende Planung für Rechtsform, Investitionen und Nachfolge.</p></div>
+    <div class=&quot;karte&quot;><div class=&quot;no&quot;>05</div><h3>Existenzgründung</h3><p>Begleitung von der Idee zur Anmeldung — mit realistischer Zahlenbasis.</p></div>
+    <div class=&quot;karte&quot;><div class=&quot;no&quot;>06</div><h3>Betriebsprüfung</h3><p>Vertretung und Begleitung bei Prüfungen — ruhig, vorbereitet, belastbar.</p></div>
+  </div>
+</div></section>
+
+<section class=&quot;about&quot; id=&quot;ueberuns&quot;><div class=&quot;w about-in&quot;>
+  <div>
+    <h2>Eine Kanzlei, die mitdenkt statt nur abarbeitet.</h2>
+    <p>Wir verstehen uns als Partner für Ihre wirtschaftlichen Entscheidungen. Zahlen sind kein Selbstzweck — sie sollen Ihnen Sicherheit geben und Spielraum schaffen.</p>
+    <p>Dabei verbinden wir klassische Beratung mit digitalen Prozessen, damit der Austausch einfach und zeitnah bleibt.</p>
+    <div class=&quot;facts&quot;>
+      <div class=&quot;fact&quot;><b>Persönlich</b><span>Fester Ansprechpartner für alle Fragen</span></div>
+      <div class=&quot;fact&quot;><b>Verlässlich</b><span>Fristen und Termine ohne Nachfragen</span></div>
+      <div class=&quot;fact&quot;><b>Diskret</b><span>Vertraulichkeit als Grundprinzip</span></div>
+      <div class=&quot;fact&quot;><b>Digital</b><span>Sicherer Austausch von Unterlagen</span></div>
+    </div>
+  </div>
+  <div class=&quot;bild&quot;><span>§</span></div>
+</div></section>
+
+<section class=&quot;kontakt&quot; id=&quot;kontakt&quot;><div class=&quot;w kontakt-in&quot;>
+  <div>
+    <h2>Sprechen wir über Ihr Anliegen.</h2>
+    <p>Schildern Sie uns kurz Ihre Situation. Wir vereinbaren ein unverbindliches Erstgespräch.</p>
+    <div class=&quot;krow&quot;><b>☎</b><div>0123 456789<span>Mo–Fr 8:30–17:00 Uhr</span></div></div>
+    <div class=&quot;krow&quot;><b>✉</b><div>kanzlei@feldmann.example<span>Antwort innerhalb eines Werktags</span></div></div>
+    <div class=&quot;krow&quot;><b>📍</b><div>Ringstraße 8, 12345 Musterstadt<span>Termine nach Vereinbarung</span></div></div>
+  </div>
+  <form onsubmit=&quot;event.preventDefault();alert('Beispielfunktion — kein Versand.');&quot;>
+    <label>Ihr Name</label><input type=&quot;text&quot; placeholder=&quot;Vor- und Nachname&quot;>
+    <label>E-Mail</label><input type=&quot;email&quot; placeholder=&quot;name@beispiel.de&quot;>
+    <label>Ihr Anliegen</label><textarea placeholder=&quot;Beschreiben Sie kurz Ihr Anliegen …&quot;></textarea>
+    <button type=&quot;submit&quot;>Erstgespräch anfragen</button>
+  </form>
+</div></section>
+
+<footer><div class=&quot;w foot&quot;>
+  <div>© Kanzlei Feldmann (Beispiel) · Musterbetrieb ohne echte Marke</div>
+  <div>Beispielseite von <a href=&quot;https://plugmil.dev/&quot;>plugmil.dev</a></div>
+</div></footer>
+</body>
+</html>
+"></div>
+</div>
+<script>
+var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+/* reveal */
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
+$$('.rv').forEach(function(e){io.observe(e)});
+setTimeout(function(){$$('.rv').forEach(function(e){e.classList.add('in')})},1800);
+/* muster previews */
+var DOCS=$$('#docs div').map(function(d){return d.dataset.doc});
+var TT=DOCS.map(function(d){var m=d.match(/<title>([^<]*)/);return m?m[1].split(" — ")[0].toLowerCase().replace(/[^a-zäöü0-9]+/g,"-").replace(/^-|-$/g,"")+".de":"beispiel.de"});
+function fit(vp){var fr=vp.querySelector('iframe'),h=+vp.dataset.h,s=vp.clientWidth/1180;fr.style.width='1180px';fr.style.height=Math.round(h/s)+'px';fr.style.transform='scale('+s+')';vp.style.height=h+'px'}
+function load(vp,url,i){var fr=vp.querySelector('iframe');fr.style.opacity=0;setTimeout(function(){fr.srcdoc=DOCS[i];url.textContent=TT[i];fr.style.opacity=1},200)}
+var hv=$('#hvp'),bv=$('#bvp'),hi=0,hov=false;
+function fitAll(){fit(hv);fit(bv)}window.addEventListener('resize',fitAll);fitAll();
+load(hv,$('#hurl'),0);hv.onmouseenter=function(){hov=true};hv.onmouseleave=function(){hov=false};
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){if(hov)return;hi=(hi+1)%3;load(hv,$('#hurl'),hi)},6000);
+/* branchen */
+var BL=[{q:'Kunden suchen „Elektriker + Ort“ – und entscheiden in Sekunden.',l:['Klickbare Telefonnummer, Notdienst-Button','Leistungen &amp; Einsatzgebiet lokal auffindbar','Referenzen, Ablauf und Anfrageformular']},
+{q:'Patienten wollen Sprechzeiten, Anfahrt und Termin – ohne Suche.',l:['Sprechzeiten &amp; Anfahrt sofort sichtbar','Leistungen und Team verständlich erklärt','Klar gegliedert und auf einfache Bedienung ausgelegt']},
+{q:'Mandanten suchen Seriosität und klare Leistungsfelder.',l:['Leistungen klar gegliedert, SEO-stark','Profil und Vertrauen in Sekunden','Diskreter Kontakt &amp; Erstgespräch']}];
+function tb(i){$$('#tabs button').forEach(function(b,k){b.classList.toggle('on',k==i)});var d=BL[i];$('#bl').innerHTML='<h3>'+['Handwerk','Arztpraxis','Kanzlei'][i]+'</h3><div class="q">'+d.q+'</div><ul>'+d.l.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>';load(bv,$('#bu'),i)}
+$$('#tabs button').forEach(function(b){b.onclick=function(){tb(+b.dataset.i)}});tb(0);
+/* project scope */
+function calc(){var n=+$('#pg').value;$('#pv').textContent=n;var extras=[];$$('#ck label').forEach(function(l){var c=l.querySelector('input');l.classList.toggle('on',c.checked);if(c.checked)extras.push(c.value)});$('#project-summary').textContent=n+' Inhaltsseite'+(n===1?'':'n')+(extras.length?' · '+extras.join(', '):' · Umfang im Gespräch klären')}
+$('#pg').oninput=calc;$$('#ck input').forEach(function(c){c.onchange=calc});calc();
+$('#use-project').onclick=function(){var field=$('#fm2');var summary=$('#project-summary').textContent;if(!field.value.includes(summary))field.value=(field.value?field.value+'\n\n':'')+'Mein geplanter Umfang: '+summary};
+/* faq */
+$$('#fq button').forEach(function(b){b.onclick=function(){var p=b.parentNode,o=p.classList.contains('o');$$('#fq div').forEach(function(d){d.classList.remove('o')});if(!o)p.classList.add('o')}});
+</script><script src="/contact.js" defer></script></body></html>
